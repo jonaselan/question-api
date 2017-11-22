@@ -21,7 +21,7 @@ class ApplicationController < ActionController::API
     self.headers["WWW-Authenticate"] = %(Token realm="#{realm.gsub(/"/, "")}")
     render json: {
       Code: 401,
-      message: 'Bad credentials'
+      message: 'Unauthorized! Report a valid token, please'
     }, status: :unauthorized
   end
 end
