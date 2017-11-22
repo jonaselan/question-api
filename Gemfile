@@ -33,7 +33,7 @@ group :development, :test do
   # for cleaner the db after test
   gem 'database_cleaner'
   # to facilitate the test related with association and validation
-  gem 'shoulda-matchers', require: false
+  gem 'shoulda'
 end
 
 group :development do
