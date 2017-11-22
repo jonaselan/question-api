@@ -3,7 +3,7 @@ class QuestionsController < ApplicationController
 
   # GET /questions
   def index
-    @questions = Question.all
+    @questions = Question.includes(:user, :answers).not_private
   end
 
   # GET /questions/1

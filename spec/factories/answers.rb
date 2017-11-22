@@ -1,6 +1,7 @@
 FactoryGirl.define do
   factory :answer do
-    body "MyString"
-    tenant nil
+    question
+    user
+    body { Faker::Lorem.paragraph(2, false, 4) }
   end
 end

@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :tenant do
-    request_counts 1
+    name { Faker::HarryPotter.character }
     api_token "MyString"
   end
 end
