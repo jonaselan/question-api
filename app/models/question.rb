@@ -7,11 +7,7 @@ class Question < ApplicationRecord
   def self.search_by(terms)
     query = ''
     terms.split(',').each_with_index do |q, i|
-      if i == 0
-        query = "body LIKE '%#{q}%'"
-      else
-        query += " or body LIKE '%#{q}%'"
-      end
+      query += i.zero? ? "body LIKE '%#{q}%'" : " or body LIKE '%#{q}%'"
     end
     Question.where(query)
   end
