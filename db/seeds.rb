@@ -1,3 +1,5 @@
+Tenant.create(name: 'tenant1')
+
 u1 = User.create(name: 'fulano1')
 u2 = User.create(name: 'fulano2')
 
