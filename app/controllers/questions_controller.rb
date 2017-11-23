@@ -10,7 +10,7 @@ class QuestionsController < ApplicationController
   private
 
   def search
-    @questions = @questions.search_by params[:q]
+    @questions = @questions.search_by params[:q].delete(" \t\r\n")
     render_not_found if @questions.empty?
   end
 

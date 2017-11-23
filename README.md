@@ -39,7 +39,7 @@ http://localhost:3000/questions.json?api_token=YOUR-API-TOKEN-HERE
 
 ### Search
 
-To make a search, you just need to put a `q` parameter on your requests, like `?q=term`.
+To make a search, you just need to put a `q` parameter on your requests, like `?q=term1,term2,term3`.
 
 ## Copyright
 

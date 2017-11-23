@@ -3,5 +3,16 @@ class Question < ApplicationRecord
   has_many :answers
 
   scope :not_private, -> { where(private: false) }
-  scope :search_by, -> (q) { where(['body LIKE ?', "%#{q}%"]) }
+
+  def self.search_by(terms)
+    query = ''
+    terms.split(',').each_with_index do |q, i|
+      if i == 0
+        query = "body LIKE '%#{q}%'"
+      else
+        query += " or body LIKE '%#{q}%'"
+      end
+    end
+    Question.where(query)
+  end
 end
