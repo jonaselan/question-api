@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :authenticate
+  before_action :authenticate, unless: -> { ENV['DISABLE_AUTH'] }
   after_action  :increment_request
 
   def index
