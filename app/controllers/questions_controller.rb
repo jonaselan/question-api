@@ -4,9 +4,15 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.includes(:user, :answers).not_private
+    search if params[:q]
   end
 
   private
+
+  def search
+    @questions = @questions.search_by params[:q]
+    render_not_found if @questions.empty?
+  end
 
   def increment_request
     @tenant.increment!(:request_counts)

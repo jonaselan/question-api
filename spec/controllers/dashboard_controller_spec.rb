@@ -14,7 +14,7 @@ RSpec.describe DashboardController, type: :controller do
       get :index, format: :json
       json = json_response['dashboard']
       expect(json['users_count']).to eq 2
-      expect(json['questions_count']).to eq 2
+      expect(json['questions_count']).to eq 1
       expect(json['answers_count']).to eq 1
     end
   end

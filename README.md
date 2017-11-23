@@ -23,8 +23,23 @@ For skip the authentication in development use **environment variables**, theref
 
 ## Usage
 
-This API is authenticated, so for make the requests, it's necessary a tenant's token. With this information, you can make a request the two ways:
+### Authentication
 
+This API is authenticated, so for make the requests, it's necessary a tenant's token. With this information, you can make a request this way:
+
+- cURL
+```
+curl http://localhost:3000/questions -H 'Authorization: Token token="YOUR-API-TOKEN-HERE"'
+```
+
+- Parameter (less secure)
+```
+http://localhost:3000/questions.json?api_token=YOUR-API-TOKEN-HERE
+```
+
+### Search
+
+To make a search, you just need to put a `q` parameter on your requests, like `?q=term`.
 
 ## Copyright
 

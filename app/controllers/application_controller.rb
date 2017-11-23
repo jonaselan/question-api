@@ -25,4 +25,11 @@ class ApplicationController < ActionController::API
       message: 'Unauthorized! Report a valid token, please'
     }, status: :unauthorized
   end
+
+  def render_not_found
+    render json: {
+      code: 404,
+      message: 'Not Found!'
+    }, status: :not_found
+  end
 end
